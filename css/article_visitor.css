@@ -1,0 +1,200 @@
+/* ##### BACKGROUND IMAGE ##### */
+
+/* body {
+	position: relative;
+} */
+
+main {
+	height: 85vh;
+	background-color: rgba(5, 5, 5, 0.60);
+}
+
+.backgroundimg1 {
+	background-image: url('../upload/img-chap01-article.jpg');
+	object-fit: contain;
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: -1;
+}
+
+.backgroundimg2 {
+	background-image: url('../upload/img-chap02-article.jpg');
+	object-fit: contain;
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: -1;
+}
+
+.backgroundimg3 {
+	background-image: url('../upload/img-chap03-article.jpg');
+	object-fit: contain;
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: -1;
+}
+
+/* ##### ARTICLE ##### */
+
+.home-svg {
+	width: 50px;
+	margin-bottom: 10%;
+}
+
+.page-article {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+}
+
+.block-desc-theme {
+	color: var(--main-bg-color);
+	width: 40%;
+	font-family: 'Poppins';
+}
+
+.block-article {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	width: fit-content;
+}
+
+.block-article-card {
+	color: var(--main-bg-color);
+	display: flex;
+	justify-content: end;
+	gap: 15px;
+}
+
+.block-article-card h3 {
+	font-family: 'Poppins';
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	font-size: 20px;
+}
+
+
+.block-article a {
+	color: var(--dark-bg-color);
+	text-decoration: none;
+}
+
+.theme-desc {
+	color: var(--main-bg-color);
+}
+
+.desc-block-article {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+@media (max-width: 768px) {
+
+	body {
+		width: 100%;
+	}
+
+	.backgroundimg1 {
+		background-image: url('../upload/img-chp1-telephone.jpg');
+		object-fit: contain;
+		background-position: top center;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		position: absolute;
+		z-index: -1;
+	}
+
+	.backgroundimg2 {
+		background-image: url('../upload/img-chp2-telephone.jpg');
+		object-fit: contain;
+		background-position: top center;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		position: absolute;
+		z-index: -1;
+	}
+
+	.backgroundimg3 {
+		background-image: url('../upload/img-chp3-telephone.jpg');
+		object-fit: contain;
+		background-position: top center;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		position: absolute;
+		z-index: -1;
+	}
+
+	main {
+		height: 100%;
+		padding: 20px;
+	}
+
+	.page-article {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+
+	.foot {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		font-size: medium;
+		flex-direction: column;
+	}
+
+	.credits>.liens {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 10px;
+		margin-top: 10px;
+		font-size: large;
+	}
+
+	.block-desc-theme {
+		width: 90%;
+	}
+
+	.block-article {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+		gap: 50px;
+	}
+
+	.block-article h3 {
+		font-size: 16px;
+	}
+
+	footer {
+		width: 100%;
+	}
+}

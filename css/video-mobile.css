@@ -1,0 +1,12 @@
+body {
+    padding: 10px;
+}
+
+svg {
+    width: 50px;
+}
+
+video {
+    width: 100%;
+    margin-top: 50px;
+}

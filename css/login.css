@@ -1,0 +1,11 @@
+:root {
+    --main-bg-color: #F4E1C0;
+    --dark-bg-color: #1D213C;
+    --main-color: #1D213C;
+    --tonic-color: #F44E1A;
+}
+
+
+* {
+    background-color: var(--main-bg-color);
+}

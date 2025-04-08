@@ -1,0 +1,87 @@
+:root {
+  --main-bg-color: #f4e1c0;
+  --dark-bg-color: #1d213c;
+  --main-color: #1d213c;
+  --tonic-color: #f44e1a;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  font-family: "Poppins", sans-serif;
+  color: var(--main-color);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  background-color: var(--dark-bg-color);
+  color: var(--main-bg-color);
+  padding: 20px;
+}
+
+header h1 {
+  font-family: "Bowlby One", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.08em;
+}
+
+header p {
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section {
+  background-color: white;
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section h2,
+section h3 {
+  color: var(--main-color);
+  font-family: "Bowlby One", sans-serif;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+section p,
+.credit {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.credit {
+  margin-left: 20px;
+}
+
+.bold {
+  font-weight: bold;
+  color: var(--tonic-color);
+}
+
+.italic {
+  font-style: italic;
+}
+
+a {
+  color: var(--tonic-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  width: 100%;
+  border-radius: 8px;
+}

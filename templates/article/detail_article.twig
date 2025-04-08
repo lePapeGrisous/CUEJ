@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+		<meta charset="UTF-8">
+	</head>
+
+{% block css %}
+	<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css"/>
+	<link rel="stylesheet" href="css/admin.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+{% endblock %}
+
+
+{% block java %} 
+<script type="text/javascript" src="js/detail.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
+
+
+{% endblock %}
+{% block nav %}
+	<a href="admin.php?page=theme">
+		Thèmes</a>
+	<a href="admin.php?page=logout">Logout</a>
+
+{% endblock %}
+
+{% block main %}
+	<h2 class="titre">Détail de l'article :
+		{{ article.titre }}</h2>
+
+	<div class="block-control">
+		<form method="POST" action="admin.php?page=theme&action=read&id={{ article.id_theme }}">
+			<button class="boutton" type="submit">Retour</button>
+		</form>
+
+		<form method="POST" action="admin.php?page=element&action=new&id={{ article.id }}">
+			<button class="boutton" type="submit">Nouveau bloc</button>
+		</form>
+	</div>
+	{% set isCarrouselOpen = false %}
+	{% for element in liste_elements %}
+		<div class="block">
+
+			{% if element.type == "h1" %}
+				<h3>{{ element.contenu|raw }}</h3>
+
+	{% elseif element.type == "separation" %}
+	<hr class="separator">
+
+	{% elseif element.type == "h2" %}
+	<h3 class="titre2">{{ element.contenu|raw }}</h3>
+
+			{% elseif element.type == "p" %}
+				{% if element.legende == "yes" %}
+					<p>{{ element.contenu|raw }}</p>
+					<p>
+		ce texte est encadré :{{element.legende|raw}}
+					</p>
+
+				{% else %}
+					<div class="">
+						<p>{{ element.contenu|raw }}</p>
+					</div>
+				{% endif %}
+
+			{% elseif element.type == "citation" %}
+				{% if element.legende == "yes" %}
+					<div class="citation">
+						<h2>«
+							{{ element.contenu|raw }}
+							»</h2>
+						<p>Auteur :
+							{{element.alt}}</p>
+		<p>Ce texte est encadré :{{element.legende|raw}}</p>
+					</div>
+				{% else %}
+					<div class="citation">
+						<h2>«
+							{{ element.contenu|raw }}
+							»</h2>
+						<p>Auteur :
+							{{element.alt}}</p>
+					</div>
+				{% endif %}
+
+			{% elseif element.type == "image" %}
+				{% if element.contenu == "carrousel" %}
+					{% if not isCarrouselOpen %}
+						<section class="splide" aria-label="Carrousel">
+							{% set isCarrouselOpen = true %}
+							<div class="splide__track">
+								<ul class="splide__list">
+									{% for element in liste_elements %}
+										{% if element.contenu == "carrousel" %}
+											<li class="splide__slide">
+												<img src="upload/{{ element.image }}" alt="{{ element.alt }}">
+											</li>
+										{% endif %}
+									{% endfor %}
+								</ul>
+							</div>
+						</section>
+					{% endif %}
+
+
+				{% else %}
+					<figure>
+						<img src="upload/{{ element.image }}" alt="{{ element.alt }}">
+		<figcaption>{{ element.legende|raw }}</figcaption>
+					</figure>
+				{% endif %}
+				
+			{% elseif element.type == 'imtxt_d' %}
+				<div class="imtxt_d">
+					<figure>
+						<img src="upload/{{ element.image }}" alt="{{ element.alt }}">
+			<figcaption>{{ element.legende|raw }}</figcaption>
+					</figure>
+		<p class="text-center ">{{ element.contenu|raw }}</p>
+				</div>
+			{% elseif element.type == 'imtxt_g' %}
+				<div class="imtxt_g">
+					<figure>
+						<img src="upload/{{ element.image }}" alt="{{ element.alt }}">
+			<figcaption>{{ element.legende|raw }}</figcaption>
+					</figure>
+		<p class="text-center ">{{ element.contenu|raw }}</p>
+				</div>
+				{# pour importer du son  #}
+			{% elseif element.type == 'son' %}
+				<p>
+					{{element.image}}</p>
+
+				<div>
+					<audio id="audio{{element.id}}" class="plyr" controls>
+
+						<source src="upload/{{ element.image }}" type="audio/mp3"/>
+
+					</audio>
+
+					 <script>																													
+						document.addEventListener('DOMContentLoaded', () => {
+							const players = Plyr.setup('.plyr');
+						});					
+					</script>
+
+				</div>
+
+			{% elseif element.type == 'video' %}
+				<div>
+					<p>{{element.video}}</p>
+					<div class="plyr">
+						<video id="video-{{element.id}}" width="100%" controls>
+							<source src="upload/{{element.image}}" type="video/mp4">
+						</video>
+					</div>
+					 <script>
+																																													
+																const video-{{element.id}} = new Plyr('#video-{{element.id}}', {
+																controls: [
+																'play-large', // The large play button in the center
+																'restart', // Restart playback
+																'rewind', // Rewind by the seek time (default 10 seconds)
+																'play', // Play/pause playback
+																'fast-forward', // Fast forward by the seek time (default 10 seconds)
+																'progress', // The progress bar and scrubber for playback and buffering
+																'current-time', // The current time of playback
+																'duration', // The full duration of the media
+																'mute', // Toggle mute
+																'volume', // Volume control
+																'captions', // Toggle captions
+																'settings', // Settings menu
+																'pip', // Picture-in-picture (currently Safari only)
+																'airplay', // Airplay (currently Safari only)
+																'fullscreen' // Toggle fullscreen
+										 						],
+																settings: ['captions', 'quality', 'speed', 'loop'],
+																});
+															</script>
+				</div>
+
+			{% endif %}
+
+			<div class="control">
+				<a href="admin.php?page=element&action=exchange&id={{ element.id }}">
+					<i class="bi bi-arrow-up-short"></i>
+				</a>
+
+				<div class="act">
+					<form method="GET" action="admin.php">
+						<input type="hidden" name="page" value="element">
+						<input type="hidden" name="action" value="edit">
+						<input type="hidden" name="id" value="{{ element.id }}">
+						<button class="boutton mod" type="submit">Modifier le bloc</button>
+					</form>
+
+			<form method="POST" action="admin.php?page=element&action=delete&id={{ element.id }}"
+				onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce bloc ?');">
+						<button class="boutton supp" type="submit">Supprimer le bloc</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	{% else %}
+		<p>Aucun élément présent</p>
+
+	{% endfor %}
+	<script src="https://cdn.plyr.io/3.7.8/plyr.js" ></script>
+
+{% endblock %}
+
+</html>

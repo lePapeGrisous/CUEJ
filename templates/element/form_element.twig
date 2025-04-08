@@ -1,0 +1,80 @@
+{% extends 'admin.twig' %}
+
+{% block java %}
+<script type="text/javascript" src="js/form.js" defer></script>
+{% endblock %}
+
+{% block main %}
+<div class="ajout">
+	<h3 class="h3titre">Ajouter un bloc</h3>
+	<form action="admin.php?page=element&action=create" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="id_article" value="{{ id_article }}">
+		<p>
+			<select name="type" id="type-select">
+				<option value="h1" {% if element.type=='h1' %}selected{% endif %}>Inter-titre</option>
+				<option value="p" {% if element.type=='p' %}selected{% endif %}>Paragraphe</option>
+				<option value="image" {% if element.type=='image' %}selected{% endif %}>Image</option>
+				<option value="imtxt_d" {% if element.type=='imtxt_d' %}selected{% endif %}>Image à gauche + Texte 
+				</option>
+				<option value="imtxt_g" {% if element.type=='imtxt_g' %}selected{% endif %}>Image à droite + Texte
+				</option>
+				<option value="son" {% if element.type=='son' %}selected{% endif %}>Son</option>
+				<option value="sontxt" {% if element.type=='sontxt' %}selected{% endif %}>Son + Texte</option>
+				<option value="video" {% if element.type=='video' %}selected{% endif %}>Vidéo</option>
+				<option value="citation" {% if element.type=='citation' %}selected{% endif %}>Citation</option>
+				<option value="separation" {% if element.type=='separation' %}selected{% endif %}>Séparation</option>
+				<option value="h2" {% if element.type=='h2' %}selected{% endif %}>Titre 2</option>
+			</select>
+		</p>
+		<div>
+			<textarea cols="100" rows="10" placeholder="Contenu de votre article" name="contenu"></textarea>
+		</div>
+
+		<div>
+			<label for="legende">Légende : </label>
+			<input type="text" placeholder="Légende de l'image" name="legende" id="legende">
+		</div>
+
+
+		<div>
+			<label for="image">Téléverser une image : </label>
+			<input class="inpimg" type="file" name="image">
+		</div>
+
+		<div>
+			<input type="checkbox" name="legende" id="encadrer" value="yes">
+			<label for="encadrer">Encadrer la citation ou le Paragraphe</label>
+		</div>
+
+		<div>
+			<input type="checkbox" name="contenu" id="carrousel" value="carrousel">
+			<label for="carrousel">Cette image fait partie d'un carrousel </label>
+		</div>
+
+
+		<div>
+			<label for="alt">Alt : </label>
+			<input type="text" placeholder="Alt de l'image" name="alt" id="alt">
+		</div>
+
+		<div>
+			<label for="auteur">Auteur de la citation </label>
+			<input type="text" placeholder="auteur" name="alt" id="auteur">
+		</div>
+
+		<div>
+			<label for="son">Téléverser un son : </label>
+			<input type="file" name="son" id="son">
+		</div>
+
+		<div>
+			<label for="video">Téléverser une vidéo : </label>
+			<input type="file" name="video" id="video">
+		</div>
+
+
+
+		<p><input class="submit" type="submit" value="Ajouter un bloc"></p>
+	</form>
+</div>
+{% endblock %}

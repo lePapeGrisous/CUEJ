@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Accueil | L'Europe sur la défensive</title>
+	<link rel="icon" type="image/x-icon" href="upload/favicon.png">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+
+	{% block css %}
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/visitor.css">
+	{% endblock %}
+</head>
+
+<body>
+	<header>
+		{% block header %}{% endblock %}
+	</header>
+
+	<main>
+		{% block main %}{% endblock %}
+	</main>
+
+	<footer>
+		<div class="foot">
+			<a href="https://iuthaguenau.unistra.fr/" target="_blank"><img src="./upload/hag.png" alt="logo_hag"></a>
+			<div class="credits">
+				<p>©2024 - Centre Universitaire d’Enseignement du Journalisme & IUT de Haguenau - Tous droits réservés
+				</p>
+				<div class="liens">
+					<a href="html/credit.html" target="_blank">©Crédits</a>
+					<a href="https://cuej.unistra.fr/mentions-legales" target="_blank">Mentions légales UNISTRA</a>
+				</div>
+			</div>
+			<a href="https://cuej.unistra.fr/" target="_blank"><img src="./upload/cuej.png" alt="logo_cuej"></a>
+		</div>
+	</footer>
+
+	<script src="js/video.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+{% extends 'admin.twig' %}
+
+{% block main %}
+<h1 class="titre">Liste des thèmes :</h1>
+<form class="nvtheme" method="POST" action="admin.php?page=theme&action=new">
+	<button class="detail" class="boutton" type="submit">Nouveau thème</button>
+</form>
+
+{% for theme in liste_themes %}
+<div class="block">
+	<img src="upload/{{ theme.image }}" alt="image">
+	<h3>Titre : {{ theme.nom }}</h3>
+	<p>Description : {{ theme.description }}</p>
+	<div class="control">
+		<form method="POST" action="admin.php?page=theme&action=read&id={{ theme.id }}">
+			<button class="detail" class="boutton" type="submit">Voir le détail du thème</button>
+		</form>
+
+		<form method="GET" action="admin.php">
+			<input type="hidden" name="page" value="theme">
+			<input type="hidden" name="action" value="edit">
+			<input type="hidden" name="id" value="{{ theme.id }}">
+			<button class="boutton mod" type="submit">Modifier le thème</button>
+		</form>
+		<form method="POST" action="admin.php?page=theme&action=delete&id={{ theme.id }}"
+			onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce thème ?');">
+			<button class="boutton supp" type="submit">Supprimer le thème</button>
+		</form>
+	</div>
+</div>
+{% else %}
+<p>Aucun thème présent</p>
+{% endfor %}
+{% endblock %}

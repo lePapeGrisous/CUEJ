@@ -1,0 +1,16 @@
+{% extends 'admin.twig' %}
+
+{% block main %}
+<form class="editheme" action="admin.php?page=theme&action=update" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="id" readonly value="{{ theme.id }}">
+	<label for="nom">Titre du thème :</label>
+	<input type="text" name="nom" placeholder="Nom" value="{{ theme.nom }}">
+	<label for="description">Description :</label>
+	<input type="text" name="description" value="{{ theme.description }}">
+	<label for="old-image">Ancienne image :</label>
+	<input type="text" name="old-image" value="{{ theme.image }}">
+	<label for="image">Téléverser une nouvelle image :</label>
+	<input class="inpimg" type="file" name="image">
+	<input class="submit" type="submit" value="Mettre à jour le thème">
+</form>
+{% endblock %}

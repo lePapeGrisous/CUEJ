@@ -1,0 +1,25 @@
+{% extends 'admin.twig' %}
+
+{% block main %}
+<form class="editart" action="admin.php?page=article&action=create" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="id_theme" value="{{ id_theme }}">
+	<label for="titre">Titre de l'article :</label>
+	<input type="text" name="titre" placeholder="Titre">
+	<label for="titre">Chapô de votre article :</label>
+	<textarea cols="100" rows="10" placeholder="Saisir ici le chapô de l'article" name="accroche"></textarea>
+	<label for="redacteur">Rédacteur de l'article :</label>
+	<input type="text" name="redacteur" placeholder="Rédacteur">
+	<label for="type">Type d'article :</label>
+	<select name="type">
+		<option value="ecrit" {% if article.type=='ecrit' %}selected{% endif %}>Écrit</option>
+		<option value="son" {% if article.type=='son' %}selected{% endif %}>Son</option>
+		<option value="video" {% if article.type=='video' %}selected{% endif %}>Vidéo</option>
+		<option value="ecson" {% if article.type=='ecson' %}selected{% endif %}>Écrit + Son</option>
+		<option value="ecvid" {% if article.type=='ecvid' %}selected{% endif %}>Écrit + Vidéo</option>
+		<option value="sonvid" {% if article.type=='sonvid' %}selected{% endif %}>Son + Vidéo</option>
+		<option value="ecim" {% if article.type=='ecim' %}selected{% endif %}>Écrit + image</option>
+		<option value="ecsonvid" {% if article.type=='ecsonvid' %}selected{% endif %}>Écrit + Son + Vidéo</option>
+	</select>
+	<input class="submit" type="submit" value="Ajouter un nouvel article">
+</form>
+{% endblock %}

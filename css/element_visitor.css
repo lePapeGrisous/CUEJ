@@ -1,0 +1,462 @@
+:root {
+	--main-bg-color: #F4E1C0;
+	--dark-bg-color: #1D213C;
+	--main-color: #1D213C;
+	--tonic-color: #F44E1A;
+}
+
+* {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--main-bg-color);
+	font-family: "Poppins";
+}
+
+a {
+	color: var(--main-color);
+}
+
+/* ##### ELEMENTS ##### */
+
+.up-btn {
+	position: fixed;
+	bottom: 22.5%;
+	right: 5%;
+	z-index: 1;
+
+	background-color: var(--tonic-color);
+	padding: 25px;
+	border-radius: 15px;
+	color: var(--dark-bg-color);
+}
+
+.menu-element {
+	position: absolute;
+}
+
+.menu-li {
+	list-style: none;
+	list-style-type: none;
+}
+
+.menu-lien {
+	text-decoration: none;
+}
+
+.home-return {
+	display: flex;
+	align-items: center;
+}
+
+.home-emoji {
+	width: 35px;
+	margin: 20px;
+}
+
+.fondbann {
+	width: 100%;
+	background: radial-gradient(circle, #000000, #17192f);
+}
+
+.baniere {
+	display: block;
+	margin: 0 auto;
+	height: 300px;
+	width: auto;
+	margin-bottom: 30px;
+}
+
+.entete {
+	color: var(--main-color);
+}
+
+.entete>h2 {
+	text-align: center;
+	font-weight: bold;
+	font-size: 32pt;
+	text-transform: uppercase;
+	margin-bottom: 40px;
+}
+
+.chapoit {
+	max-width: 800px;
+	margin: auto;
+	margin-bottom: 50px;
+	font-style: italic;
+	font-weight: 500;
+}
+
+.block-element {
+	background-color: var(--main-bg-color);
+	color: var(--dark-bg-color);
+
+	width: 800px;
+	margin: auto;
+	margin-bottom: 30px;
+}
+
+.intertitre {
+	display: flex;
+	justify-content: start;
+	align-items: start;
+	text-align: start;
+	align-self: start;
+	font-style: italic;
+	font-weight: 800;
+	font-size: 20pt;
+}
+
+.titre2 {
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 20pt;
+}
+
+.block-element img {
+	width: 800px;
+	height: auto;
+	border-radius: 10px;
+	transition: transform 0.3s ease;
+	cursor: pointer;
+}
+
+.block-element img:hover {
+	transform: scale(1.5);
+	z-index: 1;
+}
+
+.left figure {
+	width: 400px;
+	height: auto;
+	float: left;
+	margin: 20px 20px 20px 0px;
+}
+
+.right figure {
+	width: 400px;
+	height: auto;
+	float: right;
+	margin: 20px 0px 20px 20px;
+}
+
+.left>figure>img {
+	max-width: 400px;
+}
+
+.right>figure>img {
+	max-width: 400px;
+}
+
+.citation {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+.encadre {
+	margin: auto;
+	color: var(--main-bg-color);
+
+	background-color: var(--dark-bg-color);
+	border-radius: 15px;
+	padding: 15px;
+}
+
+.encadre>h4 {
+	text-align: center;
+}
+
+.nonencadre {
+	color: var(--tonic-color);
+	text-align: center;
+	font-weight: 500;
+	width: 600px;
+}
+
+.separator {
+	border: none;
+	border-top: 2px solid #000;
+	margin: 20px auto;
+	width: 90%;
+}
+
+.citation>.legende {
+	text-align: right;
+}
+
+.legende {
+	font-style: italic;
+	font-weight: 300;
+	font-size: small;
+}
+
+.guillemetEN {
+	color: var(--tonic-color);
+	font-weight: bolder;
+}
+
+.guillemetNE {
+	color: var(--main-color);
+	font-weight: bolder;
+}
+
+.son {
+	display: flex;
+	justify-content: center;
+}
+
+video {
+	border-radius: 5px;
+}
+
+.italique_text {
+	font-style: italic;
+}
+
+.gras_text {
+	font-weight: bold;
+}
+
+.encadre .gras_text {
+	color: var(--tonic-color);
+}
+
+.hyperlien-style {
+	color: var(--tonic-color);
+}
+
+.mchap {
+	font-weight: bold;
+	margin-left: 100px;
+	margin-bottom: 10px;
+	color: var(--main-color);
+}
+
+.choixartul {
+	display: flex;
+	flex-direction: row;
+	text-decoration: none;
+	list-style-type: none;
+	gap: 5px;
+	margin-bottom: 50px;
+}
+
+/* .choixart {
+	background-color: #c8b799;
+	border-radius: 10px;
+} */
+
+.block-article-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	background: var(--main-color);
+
+	/* Contour */
+	border-radius: 15px;
+	/* Coins arrondis */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	/* Ombre élégante */
+	padding: 10px;
+	height: 100%;
+	/* Assure une taille uniforme */
+	width: 200px;
+	transition: transform 0.3s,
+		box-shadow 0.3s;
+}
+
+.block-article-card:hover {
+	transform: translateY(-5px);
+	/* Légère élévation au survol */
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+	/* Accentuation de l'ombre */
+}
+
+.block-article-card h3 {
+	font-size: small;
+	color: var(--main-bg-color);
+	font-weight: bold;
+}
+
+.desc-block-article {
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2rem;
+	color: #555;
+}
+
+.desc-block-article svg {
+	width: 30px;
+	height: 30px;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	color: #333;
+}
+
+
+.redac {
+	margin-right: 200px;
+	margin-bottom: 20px;
+	text-align: right;
+	font-style: italic;
+	font-weight: bold;
+	color: var(--main-color);
+}
+
+/* splide */
+.splide {
+	max-width: 800px;
+	margin: auto;
+	height: 500px;
+}
+
+
+
+.splide__slide {
+
+	padding: 0 10px;
+	/* Ajoute de l'espace autour des diapositives */
+}
+
+.splide__slide img {
+	width: 100%;
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	object-fit: cover;
+}
+
+.splide__pagination {
+	bottom: 5px;
+}
+
+.splide__caption {
+	color: #333;
+	margin-top: 0.em;
+	font-size: 10pt;
+	font-style: italic;
+}
+
+
+@media (max-width: 768px) {
+
+	.up-btn {
+		display: none;
+	}
+
+	.redac {
+		margin-right: 100px;
+	}
+
+	audio {
+		width: 100%;
+		/* Utilise toute la largeur de l'écran */
+		height: 40px;
+		/* Réduction supplémentaire de la hauteur */
+		margin: 5px auto;
+		/* Marges minimales */
+		padding: 2px;
+		/* Réduction du padding */
+	}
+
+	.splide__arrow {
+		width: 50px;
+		height: 50px;
+	}
+
+	.block-element {
+		max-width: 80%;
+	}
+
+	.block-element p {
+		font-size: medium;
+	}
+
+	.block-element img {
+		max-width: 80%;
+		height: auto;
+	}
+
+	.encadre {
+		width: auto;
+	}
+
+	.left figure img {
+		max-width: 80%;
+	}
+
+	.right figure img {
+		max-width: 80%;
+	}
+
+	.choixartul {
+		flex-wrap: wrap;
+		margin: 0;
+		justify-content: center;
+		padding-bottom: 10px;
+	}
+
+	.choixart {
+		margin-top: 25px;
+	}
+}
+
+/* audio */
+audio {
+	display: block;
+	/* S'assure qu'il occupe une ligne complète */
+	width: 800px;
+	/* Largeur du lecteur */
+	height: 50px;
+	/* Hauteur personnalisée */
+	margin: 20px auto;
+	/* Centrer sur la page */
+
+}
+
+audio::-webkit-media-controls-play-button {
+	background-color: var(--main-bg-color);
+	/* Couleur du bouton de lecture */
+	border-radius: 50%;
+	/* Rendre le bouton de lecture rond */
+}
+
+audio::-webkit-media-controls-panel {
+	background-color: var(--dark-bg-color);
+	/* Fond de toute la barre des contrôles */
+	border-radius: 10px;
+	/* Coins arrondis pour le panneau des contrôles */
+}
+
+audio::-webkit-media-controls-timeline {
+	background: var(--main-bg-color);
+	/* Dégradé pour la barre de progression */
+	border-radius: 10px;
+	/* Coins arrondis de la barre */
+}
+
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+	margin-right: 10px;
+	/* Espacement à droite de l'affichage du temps */
+	margin-left: 10px;
+	/* Espacement à gauche pour le côté opposé */
+}
+
+audio::-webkit-media-controls-volume-slider-container {
+	background-color: var(--main-bg-color);
+	border-radius: 5px;
+}
